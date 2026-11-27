@@ -3,127 +3,147 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>30秒 結婚タイプ診断｜結婚相談所のフク先生</title>
-<meta name="description" content="5つの質問で、あなたに合う出会い方がわかります。結婚相談所のフク先生の無料診断。">
-<meta property="og:title" content="30秒 結婚タイプ診断｜結婚相談所のフク先生">
-<meta property="og:description" content="5つの質問で、あなたに合う出会い方がわかります。">
+<title>婚活ジョブ診断｜あなたの結婚タイプは？｜マリッジクリエイトNeo フク先生</title>
+<meta name="description" content="5つの質問で、あなたの婚活ジョブ（勇者・僧侶・魔法使い・軍師）がわかる！結婚相談所マリッジクリエイトNeoのフク先生の無料診断。">
+<meta property="og:title" content="婚活ジョブ診断｜あなたの結婚タイプは？">
+<meta property="og:description" content="5つの質問で、あなたの婚活ジョブがわかる。勇者・僧侶・魔法使い・軍師、あなたはどれ？">
 <meta property="og:image" content="https://hudetaro.github.io/fuku-shindan/icon.png">
 <meta property="og:type" content="website">
 <link rel="icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #FFF8F0; --brown: #2B2118; --sub: #7A6656; --pink: #E86A92; --pink-soft: #FFE6EE;
-    --green: #06C755; --line: #F0E4D8; --accent: #E86A92; --accent-dark: #B9446A;
+    --navy: #0E1430; --navy2: #1B2452; --gold: #F5C963; --gold2: #B8862E; --ink: #EDEAFF; --sub: #A9A6CF;
+    --green: #06C755; --accent: #F5C963; --accent-dark: #B8862E;
+    --dot: "DotGothic16", monospace;
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body { margin: 0; }
   body {
-    min-height: 100vh; color: var(--brown);
-    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "BIZ UDPGothic", sans-serif;
-    background: radial-gradient(circle at 15% 10%, #FFE3EC 0, transparent 40%),
-                radial-gradient(circle at 90% 30%, #FFF0D9 0, transparent 45%),
-                radial-gradient(circle at 20% 90%, #E9F6EE 0, transparent 40%), var(--cream);
-    background-attachment: fixed;
-    overflow-x: hidden;
+    min-height: 100vh; color: var(--ink);
+    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+    background: radial-gradient(ellipse at 50% 0%, #2B3A7A 0, transparent 60%), radial-gradient(ellipse at 50% 110%, #3A2457 0, transparent 55%), var(--navy);
+    background-attachment: fixed; overflow-x: hidden;
   }
-  .bg-heart { position: fixed; top: 0; font-size: 22px; opacity: .18; animation: float 9s linear infinite; pointer-events: none; z-index: 0; }
-  @keyframes float { from { transform: translateY(110vh) rotate(0); } to { transform: translateY(-10vh) rotate(40deg); } }
-  .wrap { position: relative; z-index: 1; max-width: 460px; margin: 0 auto; padding: 18px 16px 48px; }
-  .brand { text-align: center; font-size: 13px; font-weight: 700; color: var(--sub); letter-spacing: .08em; }
-  .brand b { color: var(--pink); }
+  .star { position: fixed; width: 2px; height: 2px; background: #fff; border-radius: 50%; animation: tw 3s ease-in-out infinite; pointer-events: none; z-index: 0; }
+  @keyframes tw { 50% { opacity: .15; } }
+  .wrap { position: relative; z-index: 1; max-width: 460px; margin: 0 auto; padding: 16px 16px 48px; }
+  .brand { text-align: center; font-family: var(--dot); font-size: 12px; color: var(--sub); letter-spacing: .1em; }
+  .brand b { color: var(--gold); font-weight: 400; }
   .screen { animation: in .45s cubic-bezier(.2,.8,.2,1); }
   .screen.out { animation: out .25s ease forwards; }
-  @keyframes in { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: none; } }
-  @keyframes out { to { opacity: 0; transform: translateX(-30px); } }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes out { to { opacity: 0; filter: brightness(3); } }
+
+  /* RPGウィンドウ */
+  .win { position: relative; background: linear-gradient(180deg, #1A2357, #0F1638); border: 3px solid #fff; border-radius: 10px; box-shadow: 0 0 0 3px var(--navy), 0 0 0 5px var(--gold2), 0 10px 26px #0008; padding: 16px 16px; }
+  .win h3 { margin: 0 0 10px; font-family: var(--dot); font-weight: 400; font-size: 15px; color: var(--gold); letter-spacing: .08em; }
 
   /* スタート画面 */
-  .hero { text-align: center; padding-top: 10px; }
-  .badges { display: flex; justify-content: center; gap: 8px; margin: 14px 0 6px; }
-  .badge { background: #fff; border: 2px solid var(--pink); color: var(--pink); font-weight: 900; font-size: 13px; padding: 4px 12px; border-radius: 999px; }
-  .hero h1 { font-size: 40px; line-height: 1.2; margin: 8px 0 0; font-weight: 900; letter-spacing: .02em; }
-  .hero h1 span { display: block; font-size: 18px; color: var(--pink); margin-bottom: 4px; }
-  .hero-img { height: 250px; margin: 6px 0 0; }
-  .hero-img img { height: 240px; animation: bob 2.6s ease-in-out infinite; filter: drop-shadow(0 10px 14px rgba(120,80,40,.18)); }
-  @keyframes bob { 50% { transform: translateY(-10px); } }
-  .bubble { position: relative; background: #fff; border-radius: 22px; padding: 14px 18px; font-weight: 700; line-height: 1.7; box-shadow: 0 6px 18px rgba(120,80,40,.10); }
-  .bubble::after { content: ""; position: absolute; left: 50%; top: -12px; margin-left: -12px; border: 12px solid transparent; border-top: 0; border-bottom-color: #fff; }
-  .bubble b { color: var(--pink); }
-  .types-preview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 18px 0 6px; }
-  .tp { background: #fff; border-radius: 16px; padding: 8px 4px 6px; font-size: 11px; font-weight: 700; color: var(--sub); box-shadow: 0 3px 10px rgba(120,80,40,.08); }
-  .tp img { width: 100%; aspect-ratio: 1; object-fit: contain; }
-  .btn { display: block; width: 100%; border: 0; cursor: pointer; font: inherit; font-weight: 900; font-size: 20px; color: #fff; padding: 18px; border-radius: 999px; text-align: center; text-decoration: none; }
-  .btn-start { margin-top: 18px; background: linear-gradient(135deg, #F27DA1, #E05C86); box-shadow: 0 6px 0 #B9446A, 0 12px 24px rgba(224,92,134,.35); animation: pulse 1.8s ease-in-out infinite; }
+  .hero { text-align: center; padding-top: 8px; }
+  .hero .sub { font-family: var(--dot); color: var(--gold); font-size: 14px; letter-spacing: .2em; margin-top: 14px; }
+  .hero h1 { margin: 6px 0 0; font-family: var(--dot); font-weight: 400; font-size: 40px; line-height: 1.2; letter-spacing: .06em;
+             color: #fff; text-shadow: 0 3px 0 var(--gold2), 0 0 18px #F5C96388; }
+  .hero h1 small { display: block; font-size: 16px; color: var(--ink); text-shadow: none; letter-spacing: .1em; margin-top: 6px; }
+  .hero-img { height: 220px; margin: 8px 0 4px; position: relative; }
+  .hero-img::before { content: ""; position: absolute; left: 50%; top: 50%; width: 220px; height: 220px; margin: -110px 0 0 -110px; border-radius: 50%;
+                      background: radial-gradient(circle, #F5C96355, transparent 65%); animation: glow 2.4s ease-in-out infinite; }
+  @keyframes glow { 50% { transform: scale(1.12); opacity: .6; } }
+  .hero-img img { position: relative; height: 210px; animation: bob 2.6s ease-in-out infinite; filter: drop-shadow(0 8px 12px #0009); }
+  @keyframes bob { 50% { transform: translateY(-8px); } }
+  .msg { font-family: var(--dot); font-size: 15px; line-height: 1.9; text-align: left; min-height: 5.7em; }
+  .msg b { color: var(--gold); font-weight: 400; }
+  .jobs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0 4px; }
+  .jb { background: #ffffff10; border: 2px solid #ffffff30; border-radius: 10px; padding: 6px 2px 6px; font-family: var(--dot); font-size: 12px; color: var(--ink); }
+  .jb .ph { aspect-ratio: 1; border-radius: 8px; background: #fff; display: grid; place-items: center; overflow: hidden; margin: 0 4px 4px; }
+  .jb img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(.12); }
+  .jb .q { color: var(--gold); }
+  .btn { display: block; width: 100%; border: 0; cursor: pointer; font: inherit; font-family: var(--dot); font-size: 19px; letter-spacing: .1em; color: #2A1C05; padding: 17px; border-radius: 10px; text-align: center; text-decoration: none; }
+  .btn-start { margin-top: 18px; background: linear-gradient(180deg, #FFE39A, #F5C963 50%, #D9A23D); box-shadow: 0 5px 0 #8C6420, 0 0 22px #F5C96366; animation: pulse 1.6s ease-in-out infinite; }
   @keyframes pulse { 50% { transform: scale(1.03); } }
   .btn:active { transform: translateY(4px) !important; box-shadow: none !important; }
-  .fine { font-size: 12px; color: var(--sub); text-align: center; margin-top: 14px; }
+  .fine { font-size: 12px; color: var(--sub); text-align: center; margin-top: 12px; }
 
   /* 質問画面 */
-  .steps { display: flex; gap: 6px; margin: 12px 0 18px; }
-  .steps i { flex: 1; height: 8px; border-radius: 4px; background: var(--line); transition: background .3s; }
-  .steps i.on { background: linear-gradient(90deg, #F27DA1, #E05C86); }
-  .qhead { display: flex; align-items: flex-end; gap: 10px; }
-  .qhead img { width: 96px; flex-shrink: 0; animation: bob 2.4s ease-in-out infinite; }
-  .qbubble { position: relative; flex: 1; background: #fff; border-radius: 22px; padding: 14px 16px; box-shadow: 0 6px 18px rgba(120,80,40,.10); margin-bottom: 22px; }
-  .qbubble::before { content: ""; position: absolute; left: -10px; bottom: 18px; border: 10px solid transparent; border-left: 0; border-right-color: #fff; }
-  .qn { font-size: 13px; font-weight: 900; color: var(--pink); }
-  .qt { font-size: 21px; font-weight: 900; line-height: 1.45; margin-top: 2px; }
-  .opts { display: grid; gap: 12px; margin-top: 14px; }
-  .opt { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; font: inherit; font-weight: 700; font-size: 17px; color: var(--brown);
-         background: #fff; border: 3px solid transparent; border-radius: 20px; padding: 14px 16px; cursor: pointer;
-         box-shadow: 0 4px 0 var(--line), 0 8px 18px rgba(120,80,40,.06); transition: transform .12s, border-color .12s; opacity: 0; animation: in .4s forwards; }
-  .opt .ico { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 26px; background: var(--pink-soft); flex-shrink: 0; }
-  .opt:hover { border-color: #F7B5CA; }
-  .opt.sel { border-color: var(--pink); background: #FFF3F7; transform: scale(.98); }
-  .back { background: none; border: 0; color: var(--sub); font: inherit; font-size: 14px; margin-top: 16px; cursor: pointer; }
+  .qbar { display: flex; align-items: center; gap: 10px; margin: 12px 0 14px; font-family: var(--dot); font-size: 13px; color: var(--gold); }
+  .qbar .g { flex: 1; height: 12px; border: 2px solid #fff; border-radius: 4px; padding: 1px; box-shadow: 0 0 0 2px var(--gold2); }
+  .qbar .g i { display: block; height: 100%; background: linear-gradient(90deg, #6EE7C0, #BFF7E5); transition: width .4s; }
+  .qhead { display: flex; align-items: flex-end; gap: 10px; margin-bottom: 14px; }
+  .qhead img { width: 84px; flex-shrink: 0; animation: bob 2.4s ease-in-out infinite; }
+  .qhead .win { flex: 1; }
+  .qn { font-family: var(--dot); font-size: 12px; color: var(--gold); }
+  .qt { font-family: var(--dot); font-size: 19px; line-height: 1.55; margin-top: 4px; }
+  .opts { display: grid; gap: 10px; }
+  .opt { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; font: inherit; font-weight: 700; font-size: 16px; color: var(--ink);
+         background: #ffffff0d; border: 2px solid #ffffff40; border-radius: 10px; padding: 13px 14px; cursor: pointer;
+         transition: background .12s, border-color .12s; opacity: 0; animation: in .35s forwards; }
+  .opt .cur { font-family: var(--dot); color: var(--gold); opacity: 0; width: 1em; }
+  .opt:hover, .opt.sel { border-color: var(--gold); background: #F5C9631c; }
+  .opt:hover .cur, .opt.sel .cur { opacity: 1; animation: blink .6s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .opt .ico { font-size: 22px; }
+  .back { background: none; border: 0; color: var(--sub); font: inherit; font-size: 14px; margin-top: 14px; cursor: pointer; }
 
-  /* 診断中 */
-  .think { text-align: center; padding-top: 60px; }
-  .think img { width: 200px; animation: wobble 1s ease-in-out infinite; }
+  /* 鑑定中 */
+  .think { text-align: center; padding-top: 50px; }
+  .circle { position: relative; width: 230px; height: 230px; margin: 0 auto; }
+  .circle .ring { position: absolute; inset: 0; border-radius: 50%; border: 2px dashed var(--gold); animation: spin 4s linear infinite; }
+  .circle .ring.r2 { inset: 22px; border-style: dotted; border-color: #8FE3FF; animation-direction: reverse; animation-duration: 3s; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .circle img { position: absolute; left: 50%; top: 50%; width: 150px; margin: -75px 0 0 -75px; animation: wobble 1s ease-in-out infinite; }
   @keyframes wobble { 25% { transform: rotate(-6deg); } 75% { transform: rotate(6deg); } }
-  .think p { font-size: 22px; font-weight: 900; }
-  .dots span { animation: blink 1.2s infinite; } .dots span:nth-child(2) { animation-delay: .2s; } .dots span:nth-child(3) { animation-delay: .4s; }
-  @keyframes blink { 50% { opacity: .2; } }
+  .think p { font-family: var(--dot); font-size: 20px; margin-top: 22px; }
+  .flash { position: fixed; inset: 0; background: #fff; z-index: 20; pointer-events: none; animation: fl .7s ease-out forwards; }
+  @keyframes fl { from { opacity: 1; } to { opacity: 0; } }
 
-  /* 結果画面 */
-  .you { text-align: center; font-size: 16px; font-weight: 700; color: var(--sub); margin-top: 6px; }
-  .tcard { position: relative; margin-top: 10px; border-radius: 28px; padding: 22px 18px 20px; color: #fff; text-align: center; overflow: hidden;
-           background: linear-gradient(160deg, var(--accent), var(--accent-dark)); box-shadow: 0 14px 30px rgba(0,0,0,.15); }
-  .tcard::before { content: ""; position: absolute; top: -90px; right: -60px; width: 240px; height: 240px; border-radius: 50%; background: rgba(255,255,255,.14); }
-  .tcard .catch { position: relative; font-size: 15px; font-weight: 700; }
-  .tcard .tname { position: relative; font-size: 36px; font-weight: 900; margin: 4px 0 6px; letter-spacing: .03em; }
-  .tcard .timg { position: relative; background: rgba(255,255,255,.94); border-radius: 50%; width: 220px; height: 220px; margin: 8px auto 4px; display: grid; place-items: center; animation: pop .6s cubic-bezier(.2,1.6,.4,1); }
-  .tcard .timg img { width: 190px; height: 190px; object-fit: contain; }
-  @keyframes pop { from { transform: scale(.4); opacity: 0; } }
-  .sec { background: #fff; border-radius: 22px; padding: 18px; margin-top: 14px; box-shadow: 0 6px 18px rgba(120,80,40,.07); }
-  .sec h3 { margin: 0 0 8px; font-size: 16px; display: flex; align-items: center; gap: 8px; }
-  .sec h3 em { font-style: normal; width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; background: var(--pink-soft); font-size: 17px; }
-  .sec p { margin: 0; line-height: 1.8; font-weight: 500; }
-  .bar { display: grid; grid-template-columns: 74px 1fr 34px; align-items: center; gap: 8px; margin: 9px 0; font-size: 14px; font-weight: 700; }
-  .bar .track { height: 12px; border-radius: 6px; background: var(--line); overflow: hidden; }
-  .bar .fill { height: 100%; border-radius: 6px; width: 0; background: var(--accent); transition: width 1s cubic-bezier(.2,.8,.2,1); }
-  .bar .v { text-align: right; color: var(--sub); }
-  .line-box { margin-top: 18px; background: #fff; border-radius: 26px; padding: 20px 18px; text-align: center; border: 3px solid var(--green); }
-  .line-box .lt { font-weight: 900; font-size: 18px; line-height: 1.5; }
-  .line-box .kw { display: inline-flex; align-items: center; gap: 8px; margin: 12px 0 4px; background: #EFFBF3; border: 2px dashed var(--green); border-radius: 14px; padding: 8px 14px; font-weight: 900; font-size: 22px; color: #03893B; }
+  /* 結果 */
+  .you { text-align: center; font-family: var(--dot); font-size: 15px; color: var(--sub); margin-top: 8px; letter-spacing: .1em; }
+  .jcard { margin-top: 10px; text-align: center; padding: 18px 16px 20px; border-color: var(--accent); box-shadow: 0 0 0 3px var(--navy), 0 0 0 5px var(--accent), 0 0 34px color-mix(in srgb, var(--accent) 55%, transparent); }
+  .jcard .lv { font-family: var(--dot); font-size: 13px; color: var(--gold); letter-spacing: .12em; }
+  .jcard .jname { font-family: var(--dot); font-size: 46px; line-height: 1.15; margin: 4px 0 2px; letter-spacing: .08em; color: #fff; text-shadow: 0 3px 0 var(--accent-dark), 0 0 20px var(--accent); }
+  .jcard .jtitle { font-family: var(--dot); font-size: 14px; color: var(--ink); }
+  .jcard .ph { width: 220px; height: 220px; margin: 12px auto 10px; border-radius: 50%; background: #fff; border: 4px solid var(--accent); display: grid; place-items: center; overflow: hidden; animation: pop .7s cubic-bezier(.2,1.6,.4,1); }
+  .jcard .ph img { width: 96%; height: 96%; object-fit: contain; }
+  @keyframes pop { from { transform: scale(.3) rotate(-20deg); opacity: 0; } }
+  .jcard .teaser { font-family: var(--dot); font-size: 15px; line-height: 1.85; text-align: left; margin-top: 6px; }
+  .stat { display: grid; grid-template-columns: 76px 1fr 30px; align-items: center; gap: 8px; margin: 8px 0; font-family: var(--dot); font-size: 14px; }
+  .stat .track { height: 12px; border: 2px solid #fff; border-radius: 4px; padding: 1px; }
+  .stat .fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--accent-dark), var(--accent)); transition: width 1s cubic-bezier(.2,.8,.2,1); }
+  .stat .v { text-align: right; color: var(--gold); }
+  .sealed { margin-top: 14px; }
+  .sk { position: relative; border: 2px solid #ffffff30; border-radius: 8px; padding: 10px 12px 10px 44px; margin: 8px 0; background: #ffffff08; }
+  .sk .lk { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 20px; }
+  .sk .t { font-family: var(--dot); font-size: 14px; color: var(--gold); }
+  .sk .blur { font-size: 13px; color: #ffffffaa; filter: blur(4px); user-select: none; line-height: 1.6; margin-top: 2px; }
+  .sealed .note { font-family: var(--dot); font-size: 13px; color: var(--sub); text-align: center; margin-top: 10px; line-height: 1.7; }
+  .line-box { margin-top: 18px; text-align: center; border-color: var(--green); box-shadow: 0 0 0 3px var(--navy), 0 0 0 5px var(--green), 0 0 26px #06C75555; }
+  .line-box .lt { font-family: var(--dot); font-size: 17px; line-height: 1.7; }
+  .line-box .lt b { color: #7DFFB0; font-weight: 400; }
+  .line-box .step { text-align: left; font-size: 14px; line-height: 1.8; margin: 12px 0 0; padding-left: 4px; }
+  .line-box .kw { display: inline-flex; align-items: center; gap: 8px; margin: 10px 0 2px; background: #06C7551f; border: 2px dashed var(--green); border-radius: 10px; padding: 8px 14px; font-family: var(--dot); font-size: 24px; color: #7DFFB0; }
   .copy { font: inherit; font-size: 13px; font-weight: 700; border: 0; background: var(--green); color: #fff; border-radius: 999px; padding: 4px 12px; cursor: pointer; }
-  .btn-line { margin-top: 14px; background: var(--green); box-shadow: 0 6px 0 #04913E, 0 12px 24px rgba(6,199,85,.3); }
-  .line-box .sm { font-size: 13px; color: var(--sub); margin-top: 12px; line-height: 1.6; }
+  .btn-line { margin-top: 14px; color: #fff; background: var(--green); box-shadow: 0 5px 0 #04913E, 0 0 22px #06C75566; }
+  .line-box .sm { font-size: 12px; color: var(--sub); margin-top: 12px; line-height: 1.6; }
   .row { display: flex; gap: 10px; margin-top: 16px; }
-  .btn-sub { flex: 1; font-size: 15px; padding: 14px; color: var(--brown); background: #fff; box-shadow: 0 4px 0 var(--line); }
-  .confetti { position: fixed; top: -20px; width: 10px; height: 16px; border-radius: 3px; z-index: 5; pointer-events: none; animation: fall linear forwards; }
-  @keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
-  .toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); background: rgba(43,33,24,.9); color: #fff; padding: 10px 18px; border-radius: 999px; font-size: 14px; font-weight: 700; z-index: 10; }
-  footer { text-align: center; font-size: 11px; color: #A8988A; margin-top: 28px; line-height: 1.7; }
+  .btn-sub { flex: 1; font-size: 15px; padding: 13px; color: var(--ink); background: #ffffff10; border: 2px solid #ffffff40; }
+  .spark { position: fixed; top: -20px; width: 8px; height: 8px; z-index: 5; pointer-events: none; animation: fall linear forwards; clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); }
+  @keyframes fall { to { transform: translateY(110vh) rotate(540deg); } }
+  .toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); background: #000c; border: 2px solid var(--gold); color: #fff; padding: 10px 18px; border-radius: 8px; font-family: var(--dot); font-size: 14px; z-index: 10; }
+  footer { text-align: center; font-size: 11px; color: #8A87B0; margin-top: 28px; line-height: 1.8; }
+  footer a { color: var(--gold); font-weight: 700; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="brand"><b>●</b> 結婚相談所のフク先生</div>
+  <div class="brand"><b>◆</b> 結婚相談所マリッジクリエイトNeo × フク先生 <b>◆</b></div>
   <main id="app"></main>
-  <footer><a href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener" style="color:#E86A92;font-weight:700;">▶ フク先生の添削動画（YouTube）</a><br><br>※この診断は傾向をつかむための簡易的なものです<br>© 結婚相談所のフク先生（開業準備中）</footer>
+  <footer>
+    <a href="https://hudetaro.github.io/marriage-studio/" target="_blank" rel="noopener">▶ マリッジクリエイトNeo 公式サイト</a>
+    <a href="https://www.youtube.com/channel/UClz9nCXALjZfVts4ga1Dc_Q" target="_blank" rel="noopener">▶ YouTube</a><br><br>
+    ※この診断は傾向をつかむための簡易的なものです<br>© 結婚相談所マリッジクリエイトNeo（IBJ加盟）
+  </footer>
 </div>
 <script>
 // ▼ 公式LINEの友だち追加URL
@@ -137,30 +157,25 @@ const questions = [
   { q: "恋愛がうまくいかなかったとき、多い理由は？", o: [["💨", "勢いで進んで続かない"], ["🚪", "出会いそのものが少ない"], ["🐢", "慎重すぎて進まない"], ["🎯", "理想に合う人がいない"]] },
   { q: "人から言われることが多いのは？", o: [["⚡", "行動力がある"], ["🌷", "優しい・いい人"], ["🧭", "しっかりしている"], ["⭐", "理想が高い"]] },
 ];
-// 選択肢の並び順：0=行動派 / 1=いい人 / 2=慎重派 / 3=条件整理
-const types = [
-  { name: "行動派タイプ", key: "行動派", img: "type_koudou", color: "#FF8A3D", dark: "#D9661E", catch: "恋のエンジン全開！",
-    desc: "出会いを作る力があり、気になる人には自分から動けるタイプです。あなたの明るさと行動力は、恋のきっかけを生む大きな武器です。",
-    trip: "勢いで進めるぶん、相手をよく知る前に疲れてしまったり、関係が続かなかったりしがちです。",
-    fit: "最初から価値観の合う人を絞って紹介してもらえる出会い方が向いています。" },
-  { name: "いい人タイプ", key: "いい人", img: "type_iihito", color: "#F2789F", dark: "#C9527A", catch: "まわりを笑顔にする",
-    desc: "優しくて安心感があり、一緒にいる人を大切にできるタイプです。「この人といると落ち着く」と思われる、結婚向きの魅力の持ち主です。",
-    trip: "人柄は好かれるのに、自分から動かないぶん、出会いの数が足りなくなりがちです。",
-    fit: "出会いの場をあらかじめ用意してもらえる仕組みがあると、一気に進みます。" },
-  { name: "慎重派タイプ", key: "慎重派", img: "type_shincho", color: "#4A90C2", dark: "#2F6A99", catch: "じっくり見極める",
-    desc: "相手をよく見て、納得してから進めたい堅実なタイプです。一度信頼した相手とは、長く穏やかな関係を築けます。",
-    trip: "見極めに時間をかけるぶん、決めきれずにチャンスを逃してしまいがちです。",
-    fit: "相手の情報が最初からはっきりしていて、相談できる人がそばにいる環境が向いています。" },
-  { name: "条件整理タイプ", key: "条件整理", img: "type_jouken", color: "#2FA67A", dark: "#1D7A58", catch: "未来を描ける",
-    desc: "結婚に求めるものがはっきりしていて、将来を現実的に考えられるタイプです。目標に向かって計画的に進める力があります。",
-    trip: "条件が多くなると、出会える人の幅が狭くなりがちです。",
-    fit: "条件の優先順位を一緒に整理すると、出会いの幅がぐっと広がります。" },
+// 選択肢の並び順：0=勇者 / 1=僧侶 / 2=魔法使い / 3=軍師
+// ※タイプの中身（特徴・弱点・合う出会い方）はページに書かない。LINEで職業名を送ると届く。
+const jobs = [
+  { name: "勇者", title: "出会いの扉をひらく者", img: "job_yuusha", color: "#FF8A3D", dark: "#B4501A",
+    teaser: "だれよりも先に、出会いの扉を開ける力を持つ。<br>ただし、その剣には<b>ある弱点</b>が隠されている…。" },
+  { name: "僧侶", title: "ぬくもりで人を癒す者", img: "job_souryo", color: "#F27DA1", dark: "#A8466A",
+    teaser: "そばにいる人を、自然と笑顔にする力を持つ。<br>しかし、その力が<b>まだ届いていない場所</b>がある…。" },
+  { name: "魔法使い", title: "秘めた力をたくわえる者", img: "job_mahou", color: "#8F7CFF", dark: "#4E3FB0",
+    teaser: "強い魔法を、心の奥に秘めている。<br>その力が目覚めるには、<b>ある条件</b>が必要だ…。" },
+  { name: "軍師", title: "未来の地図を描く者", img: "job_gunshi", color: "#34C79A", dark: "#1B7A5C",
+    teaser: "勝利までの地図を、だれよりも先に描ける。<br>だが、その地図には<b>見落としている道</b>がある…。" },
 ];
-const axes = ["行動力", "やさしさ", "慎重さ", "こだわり"];
+const stats = ["ゆうき", "やさしさ", "かしこさ", "こだわり"];
+const sealedItems = ["固有スキル", "隠された弱点", "装備すべき出会い方", "今日からできる攻略法"];
+const dummy = "ここには、あなたの職業だけに向けたフク先生からの解説が書かれています。";
 
 const app = document.getElementById("app");
 const root = document.documentElement.style;
-let step = 0, answers = [];
+let step = 0, answers = [], typing = null;
 
 function show(html, after) {
   const old = app.firstElementChild;
@@ -168,32 +183,49 @@ function show(html, after) {
   if (old) { old.classList.add("out"); setTimeout(put, 230); } else put();
 }
 
+// メッセージウィンドウの文字送り
+function typeText(el, html) {
+  clearInterval(typing);
+  const parts = html.split(/(<[^>]+>)/).filter(Boolean);
+  let out = "", pi = 0, ci = 0;
+  typing = setInterval(() => {
+    if (pi >= parts.length) { clearInterval(typing); return; }
+    const p = parts[pi];
+    if (p.startsWith("<")) { out += p; pi++; }
+    else { out += p[ci++]; if (ci >= p.length) { pi++; ci = 0; } }
+    el.innerHTML = out + '<span style="color:var(--gold)">▼</span>';
+  }, 38);
+}
+
 function start() {
-  root.setProperty("--accent", "#E86A92"); root.setProperty("--accent-dark", "#B9446A");
+  root.setProperty("--accent", "#F5C963"); root.setProperty("--accent-dark", "#B8862E");
   show(`
     <div class="hero">
-      <div class="badges"><span class="badge">⏱ 30秒</span><span class="badge">🆓 無料</span><span class="badge">✏️ 5問</span></div>
-      <h1><span>あなたに合う出会い方がわかる</span>結婚タイプ診断</h1>
+      <div class="sub">― 5つの質問でわかる ―</div>
+      <h1>婚活ジョブ診断<small>あなたの結婚タイプは？</small></h1>
       <div class="hero-img"><img src="${IMG}fuku_normal.webp" alt="フク先生"></div>
-      <div class="bubble">こんにちは、フク先生です🦉<br>5つの質問に答えるだけで、あなたの<b>恋愛のクセ</b>と<b>合う出会い方</b>がわかるよ！</div>
-      <div class="types-preview">
-        ${types.map((t) => `<div class="tp"><img src="${IMG}${t.img}.webp" alt="">${t.key}</div>`).join("")}
+      <div class="win"><div class="msg" id="msg"></div></div>
+      <div class="jobs">
+        ${jobs.map((j) => `<div class="jb"><div class="ph"><img src="${IMG}${j.img}.webp" alt=""></div><span class="q">？</span>${j.name}</div>`).join("")}
       </div>
-      <button class="btn btn-start" id="go">診断をはじめる ▶</button>
-      <div class="fine">登録なしで、すぐに結果が見られます</div>
-    </div>`, () => document.getElementById("go").onclick = () => { step = 0; answers = []; ask(); });
+      <button class="btn btn-start" id="go">▶ 冒険をはじめる</button>
+      <div class="fine">⏱ 30秒・無料・登録なしで結果が見られます</div>
+    </div>`, () => {
+    typeText(document.getElementById("msg"), "ようこそ、旅の人。わしはフク先生じゃ。<br>5つの質問に答えれば、そなたの<b>婚活ジョブ</b>を鑑定しよう。<br>勇者か、僧侶か、魔法使いか、軍師か…？");
+    document.getElementById("go").onclick = () => { step = 0; answers = []; ask(); };
+  });
 }
 
 function ask() {
   const { q, o } = questions[step];
   show(`
-    <div class="steps">${questions.map((_, i) => `<i class="${i <= step ? "on" : ""}"></i>`).join("")}</div>
+    <div class="qbar">QUEST ${step + 1}/${questions.length}<div class="g"><i style="width:${(step / questions.length) * 100}%"></i></div></div>
     <div class="qhead">
       <img src="${IMG}fuku_talk.webp" alt="">
-      <div class="qbubble"><div class="qn">Q${step + 1} / ${questions.length}</div><div class="qt">${q}</div></div>
+      <div class="win"><div class="qn">フク先生</div><div class="qt">${q}</div></div>
     </div>
     <div class="opts">
-      ${o.map(([ico, t], i) => `<button class="opt" data-i="${i}" style="animation-delay:${i * 70}ms"><span class="ico">${ico}</span>${t}</button>`).join("")}
+      ${o.map(([ico, t], i) => `<button class="opt" data-i="${i}" style="animation-delay:${i * 70}ms"><span class="cur">▶</span><span class="ico">${ico}</span>${t}</button>`).join("")}
     </div>
     ${step > 0 ? `<button class="back" id="back">← ひとつ前に戻る</button>` : ""}`, () => {
     app.querySelectorAll(".opt").forEach((b) => b.onclick = () => {
@@ -207,8 +239,10 @@ function ask() {
 }
 
 function thinking() {
-  show(`<div class="think"><img src="${IMG}fuku_think.webp" alt=""><p>フク先生が診断中<span class="dots"><span>.</span><span>.</span><span>.</span></span></p></div>`);
-  setTimeout(result, 1500);
+  clearInterval(typing);
+  show(`<div class="think"><div class="circle"><div class="ring"></div><div class="ring r2"></div><img src="${IMG}fuku_think.webp" alt=""></div>
+    <p>ジョブを鑑定中…</p></div>`);
+  setTimeout(() => { const f = document.createElement("div"); f.className = "flash"; document.body.appendChild(f); setTimeout(() => f.remove(), 800); result(); }, 1900);
 }
 
 function result() {
@@ -218,58 +252,62 @@ function result() {
   const max = Math.max(...score);
   let idx = score.indexOf(max);
   if (score.filter((s) => s === max).length > 1 && score[answers[3]] === max) idx = answers[3];
-  const t = types[idx];
-  const pct = score.map((s) => Math.round(30 + (s / questions.length) * 70));
-  root.setProperty("--accent", t.color); root.setProperty("--accent-dark", t.dark);
+  const j = jobs[idx];
+  const val = score.map((s) => Math.round(30 + (s / questions.length) * 69));
+  root.setProperty("--accent", j.color); root.setProperty("--accent-dark", j.dark);
   show(`
-    <div class="you">あなたは…</div>
-    <div class="tcard">
-      <div class="catch">${t.catch}</div>
-      <div class="tname">${t.name}</div>
-      <div class="timg"><img src="${IMG}${t.img}.webp" alt=""></div>
+    <div class="you">あなたの婚活ジョブは…</div>
+    <div class="win jcard">
+      <div class="lv">― Lv.1 ―</div>
+      <div class="jname">${j.name}</div>
+      <div class="jtitle">${j.title}</div>
+      <div class="ph"><img src="${IMG}${j.img}.webp" alt="${j.name}"></div>
+      <div class="teaser">${j.teaser}</div>
     </div>
-    <div class="sec"><h3><em>💡</em>あなたの特徴</h3><p>${t.desc}</p></div>
-    <div class="sec"><h3><em>📊</em>恋愛バランス</h3>
-      ${axes.map((a, i) => `<div class="bar"><span>${a}</span><div class="track"><div class="fill" data-w="${pct[i]}"></div></div><span class="v">${pct[i]}</span></div>`).join("")}
+    <div class="win" style="margin-top:14px"><h3>▼ ステータス</h3>
+      ${stats.map((a, i) => `<div class="stat"><span>${a}</span><div class="track"><div class="fill" data-w="${val[i]}"></div></div><span class="v">${val[i]}</span></div>`).join("")}
     </div>
-    <div class="sec"><h3><em>⚠️</em>つまずきやすいポイント</h3><p>${t.trip}</p></div>
-    <div class="sec"><h3><em>🌸</em>あなたに合う出会い方</h3><p>${t.fit}</p></div>
-    <div class="line-box">
-      <div class="lt">「今日からできること」と<br>くわしい解説をLINEでお届け！</div>
-      <div class="kw">「${t.key}」<button class="copy" id="copy">コピー</button></div>
-      <div class="sm">友だち追加のあと、トークでこの言葉を送ってね</div>
-      <a class="btn btn-line" href="${LINE_URL}" target="_blank" rel="noopener">LINEで解説を受け取る</a>
-      <div class="sm">結婚相談所のフク先生は開業準備中です。<br>LINEでは開業の先行登録も受付中！</div>
+    <div class="win sealed"><h3>▼ 封印されたスキル書</h3>
+      ${sealedItems.map((s) => `<div class="sk"><span class="lk">🔒</span><div class="t">${s}</div><div class="blur">${dummy}</div></div>`).join("")}
+      <div class="note">この先は、フク先生がLINEで<br>あなただけに解説します</div>
+    </div>
+    <div class="win line-box">
+      <div class="lt">🔓 封印を解くには<br><b>LINEで「${j.name}」と送る</b></div>
+      <div class="kw">${j.name}<button class="copy" id="copy">コピー</button></div>
+      <div class="step">① 下のボタンから友だち追加<br>② トークで「${j.name}」と送信<br>③ 弱点・攻略法がすぐに届きます</div>
+      <a class="btn btn-line" href="${LINE_URL}" target="_blank" rel="noopener">LINEで封印を解く ▶</a>
+      <div class="sm">結婚相談所マリッジクリエイトNeoの公式LINEです。<br>無料面談のご予約もLINEからどうぞ。</div>
     </div>
     <div class="row">
       <button class="btn btn-sub" id="share">結果をシェア</button>
       <button class="btn btn-sub" id="again">もう一度</button>
     </div>`, () => {
-    setTimeout(() => app.querySelectorAll(".fill").forEach((f) => f.style.width = f.dataset.w + "%"), 200);
-    confetti(t.color);
+    setTimeout(() => app.querySelectorAll(".fill").forEach((f) => f.style.width = f.dataset.w + "%"), 300);
+    sparks(j.color);
     document.getElementById("copy").onclick = () => {
-      (navigator.clipboard ? navigator.clipboard.writeText(t.key) : Promise.reject()).then(() => toast("コピーしました")).catch(() => toast(`「${t.key}」と送ってね`));
+      (navigator.clipboard ? navigator.clipboard.writeText(j.name) : Promise.reject()).then(() => toast("コピーしました")).catch(() => toast(`「${j.name}」と送ってね`));
     };
     document.getElementById("again").onclick = start;
     document.getElementById("share").onclick = () => {
-      const text = `わたしは「${t.name}」でした！ #結婚タイプ診断 #フク先生`;
-      if (navigator.share) navigator.share({ text, url: location.href }).catch(() => {});
-      else window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(location.href)}`, "_blank");
+      const text = `わたしの婚活ジョブは「${j.name}」でした！あなたは何？ #婚活ジョブ診断 #フク先生`;
+      if (navigator.share) navigator.share({ text, url: location.origin + location.pathname }).catch(() => {});
+      else window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(location.origin + location.pathname)}`, "_blank");
     };
   });
 }
 
-function confetti(main) {
-  const colors = [main, "#FFD54F", "#F27DA1", "#7FD1AE", "#8EC5FF"];
-  for (let i = 0; i < 60; i++) {
+function sparks(main) {
+  const colors = [main, "#F5C963", "#FFFFFF", "#8FE3FF"];
+  for (let i = 0; i < 50; i++) {
     const c = document.createElement("div");
-    c.className = "confetti";
+    c.className = "spark";
     c.style.left = Math.random() * 100 + "vw";
     c.style.background = colors[i % colors.length];
-    c.style.animationDuration = 1.8 + Math.random() * 1.8 + "s";
-    c.style.animationDelay = Math.random() * 0.5 + "s";
+    const s = 8 + Math.random() * 10; c.style.width = c.style.height = s + "px";
+    c.style.animationDuration = 2 + Math.random() * 2 + "s";
+    c.style.animationDelay = Math.random() * 0.6 + "s";
     document.body.appendChild(c);
-    setTimeout(() => c.remove(), 4500);
+    setTimeout(() => c.remove(), 5000);
   }
 }
 
@@ -280,15 +318,13 @@ function toast(msg) {
   setTimeout(() => t.remove(), 1600);
 }
 
-// 背景のハート
-for (let i = 0; i < 8; i++) {
-  const h = document.createElement("div");
-  h.className = "bg-heart"; h.textContent = "♥";
-  h.style.left = Math.random() * 100 + "vw";
-  h.style.color = i % 2 ? "#E86A92" : "#F2B36B";
-  h.style.animationDelay = -Math.random() * 9 + "s";
-  h.style.animationDuration = 8 + Math.random() * 6 + "s";
-  document.body.appendChild(h);
+// 背景の星
+for (let i = 0; i < 40; i++) {
+  const s = document.createElement("div");
+  s.className = "star";
+  s.style.left = Math.random() * 100 + "vw"; s.style.top = Math.random() * 100 + "vh";
+  s.style.animationDelay = -Math.random() * 3 + "s";
+  document.body.appendChild(s);
 }
 
 start();
