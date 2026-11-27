@@ -6,7 +6,7 @@
 <title>婚活ジョブ診断｜あなたの結婚タイプは？｜マリッジクリエイトNeo フク先生</title>
 <meta name="description" content="5つの質問で、あなたの婚活ジョブ（勇者・僧侶・魔法使い・軍師）がわかる！結婚相談所マリッジクリエイトNeoのフク先生の無料診断。">
 <meta property="og:title" content="婚活ジョブ診断｜あなたの結婚タイプは？">
-<meta property="og:description" content="5つの質問で、あなたの婚活ジョブがわかる。勇者・僧侶・魔法使い・軍師、あなたはどれ？">
+<meta property="og:description" content="5つの質問で、あなたの婚活ジョブがわかる。4つのジョブ、あなたはどれ？">
 <meta property="og:image" content="https://hudetaro.github.io/fuku-shindan/icon.png">
 <meta property="og:type" content="website">
 <link rel="icon" href="icon.png">
@@ -206,12 +206,12 @@ function start() {
       <div class="hero-img"><img src="${IMG}fuku_normal.webp" alt="フク先生"></div>
       <div class="win"><div class="msg" id="msg"></div></div>
       <div class="jobs">
-        ${jobs.map((j) => `<div class="jb"><div class="ph"><img src="${IMG}${j.img}.webp" alt=""></div><span class="q">？</span>${j.name}</div>`).join("")}
+        ${jobs.map((j) => `<div class="jb"><div class="ph"><img src="${IMG}${j.img}.webp" alt=""></div><span class="q">？？？</span></div>`).join("")}
       </div>
       <button class="btn btn-start" id="go">▶ 冒険をはじめる</button>
       <div class="fine">⏱ 30秒・無料・登録なしで結果が見られます</div>
     </div>`, () => {
-    typeText(document.getElementById("msg"), "ようこそ、旅の人。わしはフク先生じゃ。<br>5つの質問に答えれば、そなたの<b>婚活ジョブ</b>を鑑定しよう。<br>勇者か、僧侶か、魔法使いか、軍師か…？");
+    typeText(document.getElementById("msg"), "ようこそ、旅の人。わしはフク先生じゃ。<br>5つの質問に答えれば、そなたの<b>婚活ジョブ</b>を鑑定しよう。<br>そなたは、どのジョブかのう…？");
     document.getElementById("go").onclick = () => { step = 0; answers = []; ask(); };
   });
 }
