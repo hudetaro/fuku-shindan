@@ -80,8 +80,9 @@
          background: #ffffff0d; border: 2px solid #ffffff40; border-radius: 10px; padding: 13px 14px; cursor: pointer;
          transition: background .12s, border-color .12s; opacity: 0; animation: in .35s forwards; }
   .opt .cur { font-family: var(--dot); color: var(--gold); opacity: 0; width: 1em; }
-  .opt:hover, .opt.sel { border-color: var(--gold); background: #F5C9631c; }
-  .opt:hover .cur, .opt.sel .cur { opacity: 1; animation: blink .6s steps(1) infinite; }
+  .opt.sel { border-color: var(--gold); background: #F5C9631c; }
+  @media (hover: hover) { .opt:hover { border-color: var(--gold); background: #F5C9631c; } .opt:hover .cur { opacity: 1; animation: blink .6s steps(1) infinite; } }
+  .opt.sel .cur { opacity: 1; animation: blink .6s steps(1) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
   .opt .ico { font-size: 22px; }
   .back { background: none; border: 0; color: var(--sub); font: inherit; font-size: 14px; margin-top: 14px; cursor: pointer; }
